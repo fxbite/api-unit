@@ -6,12 +6,12 @@ export const find = async(dbCollection: string, query: {}) => {
         const clientPromise = await mongoClient.connect();
         const collection = clientPromise.db(process.env.DB_NAME!).collection(dbCollection)
         
-        const results = await collection.find(query)
+        const results = await collection.find(query).project({_id: 0}).toArray()
         await mongoClient.close()
         return results
 
     } catch (error) {
-        return error
+        console.log(error);
     }
 }
 

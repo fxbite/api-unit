@@ -5,7 +5,11 @@ import formattedReturn from './formattedReturn'
 export const showCity: Handler = async(event, context) => {
     try {
         const results = await find(process.env.COLLECTION_CITY!, {})
-        return formattedReturn(200, results);
+        const returnData = {
+            data: results,
+            total: results?.length
+        }
+        return formattedReturn(200, returnData);
     } catch (error) {
         return formattedReturn(500, error);
     }
