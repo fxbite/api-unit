@@ -1,6 +1,6 @@
 [build]
   functions = "functions"
-  environment = { MONGODB_URI = "mongodb+srv://merlin:OWaYgeJz3wLCpUhn@cluster0.5pffu.mongodb.net/?retryWrites=true&w=majority", DB_NAME = "unit", COLLECTION_CITY = "city", COLLECTION_DISTRICT = "district", COLLECTION_WARD = "ward"}
+  environment = { MONGODB_URI = "", DB_NAME = "unit", COLLECTION_CITY = "city", COLLECTION_DISTRICT = "district", COLLECTION_WARD = "ward"}
 
 [functions]
   node_bundler = "esbuild"
